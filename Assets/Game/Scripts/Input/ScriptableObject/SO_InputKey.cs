@@ -12,18 +12,20 @@ namespace Gameplay.Input
 
         [field: SerializeField] public bool bIsKeyUsable { get; set; } = true;
         [SerializeField] public KeyCode Associativekey;
-
        
-
+        [field: SerializeField] public bool IsKeyPress { get;  private set; }
+        
         public virtual void OnPress(KeyCode key)
         {
             if (!IsUpdateUsable(key)) return;
+            IsKeyPress = true;
             EventOnPress.Invoke();
         }
 
         public virtual void OnRelease(KeyCode key)
         {
             if (!IsUpdateUsable(key)) return;
+            IsKeyPress = false;
             EventOnRelease.Invoke();
         }
 
