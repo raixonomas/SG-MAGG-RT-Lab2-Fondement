@@ -19,7 +19,10 @@ public class BallLauncher : MonoBehaviour
     {
         if (collision.CompareTag(ballTag))
         {
-            AddBall(collision.gameObject);
+            if (!ballsToLaunch.Contains(collision.gameObject))
+            {
+                ballsToLaunch.Add(collision.gameObject);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -62,13 +65,5 @@ public class BallLauncher : MonoBehaviour
             ball.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
         }
         currentStrength = 0;
-    }
-
-    private void AddBall(GameObject ballObject)
-    {
-        if (!ballsToLaunch.Contains(ballObject))
-        {
-            ballsToLaunch.Add(ballObject);
-        }
     }
 }
