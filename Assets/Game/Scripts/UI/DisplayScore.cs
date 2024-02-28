@@ -6,11 +6,9 @@ public class DisplayScore : MonoBehaviour
     [SerializeField] private List<UIPlayerRanking> ListOfScore;
     [SerializeField] private ScoreHandler ScoreHandle;
 
-    void Start()
+    private void Start()
     {
         ScoreHandle.OnLoadScores();
-
-        ScoreHandle.OnSaveScore();
         DisplayRanking();
     }
 

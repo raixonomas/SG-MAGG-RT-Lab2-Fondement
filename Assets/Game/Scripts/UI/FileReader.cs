@@ -20,21 +20,21 @@ public class FileReader
     public static void Serialize(string fileName, HashSet<ScoreItem> hashScoreSet)
     {
         var path = FilePath(fileName);
-        FileStream fs = File.Exists(path) ? new FileStream(path, FileMode.Open) : new FileStream(path, FileMode.Create);
 
-        BinaryFormatter formatter = new BinaryFormatter();
         try
         {
-            formatter.Serialize(fs, hashScoreSet);
+            using (FileStream fs = File.Exists(path)
+                       ? new FileStream(path, FileMode.Open)
+                       : new FileStream(path, FileMode.Create))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                formatter.Serialize(fs, hashScoreSet);
+            }
         }
         catch (SerializationException e)
         {
             Debug.Log("Failed to serialize. Reason: " + e.Message);
             throw;
-        }
-        finally
-        {
-            fs.Close();
         }
     }
 
@@ -42,26 +42,24 @@ public class FileReader
     public static void Deserialize(string fileName, out HashSet<ScoreItem> hash)
     {
         var path = FilePath(fileName);
-        if (!File.Exists(path) || new FileInfo(path).Length <5)
+        if (!File.Exists(path) || new FileInfo(path).Length < 5)
         {
             hash = new HashSet<ScoreItem>();
             return;
         }
 
-        FileStream fs = new FileStream(path, FileMode.Open);
         try
         {
-            BinaryFormatter formatter = new BinaryFormatter();
-            hash = (HashSet<ScoreItem>)formatter.Deserialize(fs);
+            using (FileStream fs = new FileStream(path, FileMode.Open))
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                hash = (HashSet<ScoreItem>)formatter.Deserialize(fs);
+            }
         }
         catch (SerializationException e)
         {
             Console.WriteLine("Failed to deserialize. Reason: " + e.Message);
             throw;
-        }
-        finally
-        {
-            fs.Close();
         }
     }
 
