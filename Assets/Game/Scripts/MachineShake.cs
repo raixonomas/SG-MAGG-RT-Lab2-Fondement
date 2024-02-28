@@ -1,9 +1,11 @@
+using Gameplay.Input;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MachineShake : MonoBehaviour
 {
+    [SerializeField] private SO_InputKey shakeInputKey;
     [SerializeField] private float maxShake;
     [SerializeField] private BallSpawner ballSpawner;
     [SerializeField] private float shakeIntensity;
@@ -21,13 +23,19 @@ public class MachineShake : MonoBehaviour
     }
     private void Update()
     {
-        // TODO: REPLACE ME
-        if (Input.GetKeyDown(KeyCode.Space) && !tilted)
+        if (shakeInputKey.IsKeyPress && !tilted && !shaking)
         {
             StartCoroutine(Shake());
         }
         if (tilted)
-            tilted = ballSpawner.BallInPlay();
+        {
+            if (!ballSpawner.BallInPlay())
+            {
+                Debug.Log("untilted");
+                tilted = false;
+                InputManager.Instance.EnableGameplayInput();
+            }
+        }
         if (currentShakeLevel > 0 && !shaking)
             currentShakeLevel -= Time.deltaTime;
     }
@@ -36,8 +44,7 @@ public class MachineShake : MonoBehaviour
     {
         shaking = true;
         bool reversed = false;
-        // TODO: REPLACE ME
-        while (Input.GetKey(KeyCode.Space))
+        while (shakeInputKey.IsKeyPress)
         {
             currentShakeLevel += Time.deltaTime;
             if (currentShakeLevel >= maxShake)
@@ -73,6 +80,7 @@ public class MachineShake : MonoBehaviour
     private void TiltMachine()
     {
         tilted = true;
+        InputManager.Instance.DisableGameplayInput();
         Debug.Log("tilted");
     }
 }

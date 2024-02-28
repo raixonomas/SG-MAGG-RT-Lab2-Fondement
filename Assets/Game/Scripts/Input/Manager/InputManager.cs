@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace Gameplay.Input
 {
@@ -52,7 +53,27 @@ namespace Gameplay.Input
         {
             foreach (var input in ListOfGameplayInput)
             {
-                input.bIsKeyUsable = !bIsGamePause;
+                input.SetIsKeyUsable(!bIsGamePause);
+            }
+        }
+
+        public void EnableGameplayInput()
+        {
+            if (bIsGamePause)
+            {
+                return;
+            }
+            foreach (var input in ListOfGameplayInput)
+            {
+                input.SetIsKeyUsable(true);
+            }
+        }
+
+        public void DisableGameplayInput()
+        {
+            foreach (var input in ListOfGameplayInput)
+            {
+                input.SetIsKeyUsable(false);
             }
         }
     }
