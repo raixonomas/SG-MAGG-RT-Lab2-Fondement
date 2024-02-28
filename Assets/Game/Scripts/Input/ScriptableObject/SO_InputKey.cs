@@ -10,11 +10,20 @@ namespace Gameplay.Input
         [field: SerializeField] public UnityEvent EventOnPress { get; private set; }
         [field: SerializeField] public UnityEvent EventOnRelease { get; private set; }
 
-        [field: SerializeField] public bool bIsKeyUsable { get; set; } = true;
+        [field: SerializeField] public bool bIsKeyUsable { get; private set; } = true;
         [SerializeField] public KeyCode Associativekey;
-       
-        [field: SerializeField] public bool IsKeyPress { get;  private set; }
-        
+
+        [field: SerializeField] public bool IsKeyPress { get; private set; }
+
+        public void SetIsKeyUsable(bool isKeyUsable)
+        {
+            bIsKeyUsable = isKeyUsable;
+            if (!bIsKeyUsable)
+            {
+                IsKeyPress = false;
+            }
+        }
+
         public virtual void OnPress(KeyCode key)
         {
             if (!IsUpdateUsable(key)) return;
@@ -33,7 +42,7 @@ namespace Gameplay.Input
         {
             return bIsKeyUsable && Associativekey == key;
         }
-        
+
         private void OnDisable()
         {
             EventOnPress.RemoveAllListeners();
