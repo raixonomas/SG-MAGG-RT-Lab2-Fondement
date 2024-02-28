@@ -1,16 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BallSpawner : MonoBehaviour
+public class BallSpawner : Manager<BallSpawner>
 {
     [SerializeField] private GameObject ballPrefab;
     [SerializeField] private int numberToInstanciate;
     [SerializeField] private bool multiBallMode;
     private GameObject[] balls;
-    private int currentBallCount;
+    public int currentBallCount { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
         balls = new GameObject[numberToInstanciate];
         for (int i = 0; i < numberToInstanciate; i++)
