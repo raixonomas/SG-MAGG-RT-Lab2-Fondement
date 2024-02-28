@@ -15,4 +15,7 @@ MonoBehaviour:
   HasBeenLoad: 1
   <PlayerData>k__BackingField:
     RankID: 1
-    Score: 2000
+    Score: 50
+  OnScoreChange:
+    m_PersistentCalls:
+      m_Calls: []

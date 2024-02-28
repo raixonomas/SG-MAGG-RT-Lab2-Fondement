@@ -29,7 +29,7 @@ public class BallSpawner : MonoBehaviour
             bool spawned = SpawnBall();
             Debug.Log("Ball Spawn: " + spawned);
         }
-
+        //TODO: replace me
         if (Input.GetKeyDown(KeyCode.G))
         {
             multiBallMode = !multiBallMode;
@@ -53,6 +53,15 @@ public class BallSpawner : MonoBehaviour
         return true;
     }
 
+    public bool BallInPlay()
+    {
+        foreach (GameObject ball in balls)
+        {
+            if (ball.gameObject.activeSelf) return true;
+        }
+        return false;
+    }
+
     private GameObject GetAvailableBall()
     {
         foreach (GameObject ball in balls)
@@ -62,12 +71,5 @@ public class BallSpawner : MonoBehaviour
         return null;
     }
 
-    private bool BallInPlay()
-    {
-        foreach (GameObject ball in balls)
-        {
-            if (ball.gameObject.activeSelf) return true;
-        }
-        return false;
-    }
+   
 }

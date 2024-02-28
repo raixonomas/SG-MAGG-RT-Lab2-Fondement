@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 [CreateAssetMenu]
 public class ScoreHandler : ScriptableObject
@@ -10,9 +11,9 @@ public class ScoreHandler : ScriptableObject
     public HashSet<ScoreItem> ListOfPlayerScores = new();
     public bool HasBeenLoad = false;
     [field: SerializeField] public ScoreItem PlayerData { get; private set; }
-
     private const string SaveFileName = "Score";
 
+    public UnityEvent OnScoreChange;
 
     public void OnLoadScores()
     {
@@ -72,4 +73,13 @@ public class ScoreHandler : ScriptableObject
         PlayerData.Score = 0;
         PlayerData.RankID = -1;
     }
+
+    public void AddScore(int amount)
+    {
+        PlayerData.Score += amount;
+        OnScoreChange.Invoke();
+    }
+
+   
+
 }
