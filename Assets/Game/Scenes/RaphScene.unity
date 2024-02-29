@@ -388,7 +388,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -484,74 +484,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330410211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 4.14, z: -15.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &404494634
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 982941536}
-    m_Modifications:
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.43457767
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.765895
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2324500607744732477, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-      propertyPath: m_Name
-      value: Ball Destroyer
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
 --- !u!1001 &410391399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -678,11 +617,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 838115812723573726, guid: 85ccafeac88032b40a865b36fdf25394, type: 3}
   m_PrefabInstance: {fileID: 453183664}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &680939359 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1772980615369844431, guid: a255a5ade47f8a248a657b871dd430a1, type: 3}
-  m_PrefabInstance: {fileID: 404494634}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &699083187
 GameObject:
@@ -1001,9 +935,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2472893384055876405, guid: d38254641f3d54d4e8804751e3206aea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 212575582}
-    - targetCorrespondingSourceObject: {fileID: 2472893384055876405, guid: d38254641f3d54d4e8804751e3206aea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 680939359}
     - targetCorrespondingSourceObject: {fileID: 2472893384055876405, guid: d38254641f3d54d4e8804751e3206aea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569620658}
