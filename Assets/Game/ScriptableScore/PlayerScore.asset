@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasBeenLoad: 1
   <PlayerData>k__BackingField:
-    RankID: 1
-    Score: 50
+    RankID: -1
+    Score: 1450
   OnScoreChange:
     m_PersistentCalls:
       m_Calls: []
