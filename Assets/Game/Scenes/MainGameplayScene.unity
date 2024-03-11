@@ -5989,6 +5989,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5531728237935549633, guid: 2cafda0f92b57ce44889031e5c26ea6a, type: 3}
+      propertyPath: PlayerScore
+      value: 
+      objectReference: {fileID: 11400000, guid: ad0a8a2ad85c95c4f9d94b7746befc81, type: 2}
     - target: {fileID: 6621280900748591155, guid: 2cafda0f92b57ce44889031e5c26ea6a, type: 3}
       propertyPath: m_RootOrder
       value: 0
