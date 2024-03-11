@@ -12,8 +12,10 @@ public class ScoreHandler : ScriptableObject
     public bool HasBeenLoad = false;
     [field: SerializeField] public ScoreItem PlayerData { get; private set; }
     private const string SaveFileName = "Score";
-
+    private const float extraBallScoreAmount = 5000;
+    private bool extraBallGiven = false;
     public UnityEvent OnScoreChange;
+
 
     public void OnLoadScores()
     {
@@ -72,14 +74,17 @@ public class ScoreHandler : ScriptableObject
     {
         PlayerData.Score = 0;
         PlayerData.RankID = -1;
+        extraBallGiven = false;
     }
 
     public void AddScore(int amount)
     {
         PlayerData.Score += amount;
         OnScoreChange.Invoke();
+        if (PlayerData.Score >= extraBallScoreAmount && !extraBallGiven)
+        {
+            extraBallGiven = true;
+            BallSpawner.Instance.AddBallToPool();
+        }
     }
-
-   
-
 }

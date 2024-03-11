@@ -34,11 +34,11 @@ public class BallLauncher : MonoBehaviour
     private void Update()
     {
         // TODO: remove this, debug
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             BeginHold();
         }
-        if (Input.GetKeyUp(KeyCode.V))
+        if (Input.GetKeyUp(KeyCode.Return))
         {
             Release();
         }
