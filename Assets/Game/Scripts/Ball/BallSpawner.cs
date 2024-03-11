@@ -10,6 +10,7 @@ public class BallSpawner : Manager<BallSpawner>
 
     protected override void Awake()
     {
+        base.Awake();
         balls = new GameObject[numberToInstanciate];
         for (int i = 0; i < numberToInstanciate; i++)
         {
@@ -21,17 +22,13 @@ public class BallSpawner : Manager<BallSpawner>
 
     private void Update()
     {
-        // TODO: remove me, debug
         if (Input.GetKeyDown(KeyCode.T))
         {
             bool spawned = SpawnBall();
-            Debug.Log("Ball Spawn: " + spawned);
         }
-        //TODO: replace me
         if (Input.GetKeyDown(KeyCode.G))
         {
             multiBallMode = !multiBallMode;
-            Debug.Log("Multi ball: " + multiBallMode);
         }
     }
 

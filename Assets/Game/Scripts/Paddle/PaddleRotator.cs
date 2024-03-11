@@ -8,7 +8,7 @@ public class PaddleRotator : MonoBehaviour
 
     [Header("Paddle Data")] [SerializeField]
     private GameObject Child;
-    [SerializeField] private float RotationSpeed = 1.0f;
+    [SerializeField] private float RotationSpeed = 50;
     [SerializeField] private bool IsLeftPaddle = true;
 
     [Header("Angle Data")] [SerializeField]
@@ -16,6 +16,8 @@ public class PaddleRotator : MonoBehaviour
 
     [SerializeField] private float DefaultAngle;
     [SerializeField] private float MaxAngle;
+
+    private Rigidbody2D rb;
 
     private Coroutine ResetPaddleRoutine;
 
@@ -28,6 +30,7 @@ public class PaddleRotator : MonoBehaviour
         
         Child.transform.SetParent(transform);
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, DefaultAngle));
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -40,18 +43,17 @@ public class PaddleRotator : MonoBehaviour
     private void OnHoldKey()
     {
         if (!paddleInputKey.IsKeyPress) return;
-       
-        var desiredRot = Quaternion.Euler(new Vector3(0, 0, MaxAngle));
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRot, RotationSpeed * Time.deltaTime);
+
+        Quaternion desiredRot = Quaternion.Euler(new Vector3(0, 0, MaxAngle));
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, desiredRot, RotationSpeed * Time.deltaTime));
     }
 
     private void OnReleaseKey()
     {
         if (paddleInputKey.IsKeyPress) return;
-       
-        var desiredRot = Quaternion.Euler(new Vector3(0, 0, MinAngle));
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRot, RotationSpeed * Time.deltaTime);
 
+        Quaternion desiredRot = Quaternion.Euler(new Vector3(0, 0, MinAngle));
+        rb.MoveRotation(Quaternion.Slerp(transform.rotation, desiredRot, RotationSpeed * Time.deltaTime));
     }
   
 }

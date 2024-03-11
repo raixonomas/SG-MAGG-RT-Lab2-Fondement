@@ -11,7 +11,7 @@ public class BallDestroyer : MonoBehaviour
         if (collision.CompareTag(tagToDestroy))
         {
             collision.gameObject.SetActive(false);
-            if (BallSpawner.Instance.currentBallCount <= 0)
+            if (BallSpawner.Instance.currentBallCount <= 0 && !BallSpawner.Instance.BallInPlay())
             {
                 OnEndGame.Invoke();
             }
