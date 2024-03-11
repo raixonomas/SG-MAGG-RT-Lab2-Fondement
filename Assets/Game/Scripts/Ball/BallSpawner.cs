@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BallSpawner : Manager<BallSpawner>
@@ -57,6 +58,23 @@ public class BallSpawner : Manager<BallSpawner>
         return false;
     }
 
+    public void AddBallToPool()
+    {
+        GameObject[] temp = new GameObject[balls.Length + 1]; 
+
+        for(int i = 0; i < balls.Length; i++)
+        {
+            temp[i] = balls[i];
+        }
+
+        temp[balls.Length] = Instantiate(ballPrefab);
+        temp[balls.Length].gameObject.SetActive(false);
+        currentBallCount++;
+        balls = temp;
+
+        Debug.Log("added");
+    }
+
     private GameObject GetAvailableBall()
     {
         foreach (GameObject ball in balls)
@@ -65,6 +83,4 @@ public class BallSpawner : Manager<BallSpawner>
         }
         return null;
     }
-
-   
 }
