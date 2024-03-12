@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6137675568206127178}
   - component: {fileID: 5412974877687355642}
   - component: {fileID: 2759158215767179968}
+  - component: {fileID: 6692043900173705086}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -231,3 +232,16 @@ PolygonCollider2D:
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
   m_UseDelaunayMesh: 0
+--- !u!114 &6692043900173705086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8314730839798725921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2818a48d8353db9409434ee7948cbc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatedColor: {r: 1, g: 0, b: 0, a: 1}
