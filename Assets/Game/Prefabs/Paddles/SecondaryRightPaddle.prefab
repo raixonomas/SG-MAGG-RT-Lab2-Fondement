@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3112449210170034736}
   - component: {fileID: 2096846533378428167}
   - component: {fileID: 9157126160721446771}
+  - component: {fileID: 5273805909870554856}
   m_Layer: 0
   m_Name: PaddleVisual
   m_TagString: Untagged
@@ -130,6 +131,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &5273805909870554856
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290657149352294273}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1553602232797657828
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +189,7 @@ Transform:
   - {fileID: 8865581450830213412}
   - {fileID: 3112449210170034736}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2835478953032085779
 GameObject:
@@ -173,6 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8865581450830213412}
   - component: {fileID: 3333958463033357063}
+  - component: {fileID: 5452705772568036624}
   m_Layer: 0
   m_Name: RotationAnchor
   m_TagString: Untagged
@@ -214,3 +243,30 @@ MonoBehaviour:
   MinAngle: -45
   DefaultAngle: -45
   MaxAngle: 45
+--- !u!50 &5452705772568036624
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835478953032085779}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0

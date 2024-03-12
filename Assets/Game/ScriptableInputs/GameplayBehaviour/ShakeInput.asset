@@ -18,6 +18,6 @@ MonoBehaviour:
   <EventOnRelease>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  <bIsKeyUsable>k__BackingField: 0
-  Associativekey: 0
+  <bIsKeyUsable>k__BackingField: 1
+  Associativekey: 32
   <IsKeyPress>k__BackingField: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5054878169614189570}
   - component: {fileID: 5737077057572875598}
   - component: {fileID: 1171410372721924216}
+  - component: {fileID: 8520624093770276037}
   m_Layer: 0
   m_Name: PaddleVisual
   m_TagString: Untagged
@@ -130,6 +131,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &8520624093770276037
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521670903447666578}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &1599418031024423234
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5800946889412858327}
   - component: {fileID: 17591397830380725}
+  - component: {fileID: 6129979363264624047}
   m_Layer: 0
   m_Name: RotationAnchor
   m_TagString: Untagged
@@ -176,11 +205,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddleInputKey: {fileID: 11400000, guid: 136b1a0066fa1944cb16eedbadc68766, type: 2}
   Child: {fileID: 521670903447666578}
-  RotationSpeed: 10
+  RotationSpeed: 150
   IsLeftPaddle: 1
   MinAngle: -45
   DefaultAngle: -45
   MaxAngle: 45
+--- !u!50 &6129979363264624047
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1599418031024423234}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &5733314882037589508
 GameObject:
   m_ObjectHideFlags: 0

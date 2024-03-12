@@ -4,9 +4,9 @@ public class CollisionEntity : MonoBehaviour
 {
     [SerializeField] private ScoreHandler ScoreHandler;
     [SerializeField] private int ScoreAmount = 25;
-    public void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
             ScoreHandler.AddScore(ScoreAmount);
         }

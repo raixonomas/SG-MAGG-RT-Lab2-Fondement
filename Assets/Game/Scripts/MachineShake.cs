@@ -7,9 +7,9 @@ public class MachineShake : MonoBehaviour
 {
     [SerializeField] private SO_InputKey shakeInputKey;
     [SerializeField] private float maxShake;
-    [SerializeField] private BallSpawner ballSpawner;
     [SerializeField] private float shakeIntensity;
     [SerializeField] private float shakeDistance;
+    [SerializeField] private TMPro.TMP_Text tiltedText;
     private Vector3 basePosition;
     private float currentShakeLevel;
     private bool tilted;
@@ -29,11 +29,11 @@ public class MachineShake : MonoBehaviour
         }
         if (tilted)
         {
-            if (!ballSpawner.BallInPlay())
+            if (!BallSpawner.Instance.BallInPlay())
             {
-                Debug.Log("untilted");
                 tilted = false;
                 InputManager.Instance.EnableGameplayInput();
+                tiltedText.gameObject.SetActive(false);
             }
         }
         if (currentShakeLevel > 0 && !shaking)
@@ -73,7 +73,6 @@ public class MachineShake : MonoBehaviour
             yield return null;
         }
         shaking = false;
-        Debug.Log("finished shaking");
         transform.position = basePosition;
     }
 
@@ -81,6 +80,6 @@ public class MachineShake : MonoBehaviour
     {
         tilted = true;
         InputManager.Instance.DisableGameplayInput();
-        Debug.Log("tilted");
+        tiltedText.gameObject.SetActive(true);
     }
 }

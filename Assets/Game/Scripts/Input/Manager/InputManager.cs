@@ -7,6 +7,8 @@ namespace Gameplay.Input
     {
         public Dictionary<KeyCode, SO_InputKey> MapOfGameplayInput { get; private set; } = new();
 
+        [SerializeField] private ScoreHandler PlayerScore;
+
         [SerializeField] private List<SO_InputKey> ListOfGameplayInput;
         [field: SerializeField] public SO_InputKey PauseInput { get; private set; }
 
@@ -17,6 +19,8 @@ namespace Gameplay.Input
             base.Awake();
             FeedMapping();
             EnableAllInput();
+            PlayerScore.ResetPlayerScore();
+
         }
 
         private void OnGUI()

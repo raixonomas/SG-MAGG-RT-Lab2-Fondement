@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3549772603563063764}
   - component: {fileID: 9217329411816539833}
+  - component: {fileID: 5934274129596673134}
   m_Layer: 0
   m_Name: RotationAnchor
   m_TagString: Untagged
@@ -51,6 +52,33 @@ MonoBehaviour:
   MinAngle: -45
   DefaultAngle: -45
   MaxAngle: 45
+--- !u!50 &5934274129596673134
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200965583184187156}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &5497057397695459828
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +90,7 @@ GameObject:
   - component: {fileID: 7741344422266424387}
   - component: {fileID: 6277181398414544811}
   - component: {fileID: 6148586931145269373}
+  - component: {fileID: 9201988931250128804}
   m_Layer: 0
   m_Name: PaddleVisual
   m_TagString: Untagged
@@ -181,6 +210,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &9201988931250128804
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5497057397695459828}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &7882153022571622557
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,5 +268,5 @@ Transform:
   - {fileID: 3549772603563063764}
   - {fileID: 7741344422266424387}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
